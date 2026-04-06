@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Dashboard</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300;8..144,400;8..144,600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="general.css">
+
+
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>Finance Dashboard</h2>
+
+    <select id="roleSelector" class="search-input">
+      <option value="admin">Role: Admin</option>
+      <option value="viewer">Viewer</option>
+    </select>
+  </div>
+
+  <!-- Stats Row -->
+  <div class="row">
+    <div class="stat-card">
+      <div class="stat-value">$12,540</div>
+      <div class="stat-label">Total Balance</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-value">
+        $7,200 
+        <img class="card-icon" src="image/up-arrow_16800276.png" >
+      </div>
+      <div class="stat-label">Income</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-value">
+        $4,200
+        <img class="card-icon" src="image/down_18739184.png" >
+      </div>
+      <div class="stat-label">Expenses</div>
+    </div>
+  </div>
+
+  <!-- Charts -->
+  <div class="row">
+    <div class="panel">
+      Balance Trend (Line Chart)
+      <canvas id="lineChart"></canvas>
+    </div>
+
+    <div class="panel">
+      Spending Breakdown (Pie Chart)
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Transactions -->
+  <div class="table-container">
+    <h3>Transactions</h3>
+
+    <input id="searchInput" type="text" class="search-input" placeholder="Search...">
+
+    <button id="addTransactionBtn" class="addTransaction-Btn">
+      + Add Transaction
+    </button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+
+      <tbody id="transactionList">
+        <tr>
+          <td>12/08/2023</td>
+          <td>$2,000</td>
+          <td>Groceries</td>
+          <td>Debit</td>
+        </tr>
+
+        <tr>
+          <td>11/28/2023</td>
+          <td>$5,000</td>
+          <td>Salary</td>
+          <td>Credit</td>
+        </tr>
+
+        <tr>
+          <td>11/19/2023</td>
+          <td>$1,500</td>
+          <td>Transport</td>
+          <td>Debit</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Insights -->
+  <div class="insights">
+    <h3>Insights</h3>
+
+    <div class="insight-card">
+
+      <div class="highest-spending">
+        <img src="image/trolley.png"alt="Centered Image">
+        <div class="title">Top Spending: Groceries</div>
+      </div>
+
+      <div class="monthly-comparison">
+        <img src="image/cash-flow_4318201.png"alt="Centered Image">
+        <div class="title">Monthly Comparison</div>
+        <img src="image/bar graph.png">
+      </div>
+
+      <div class="observation">
+        <img src="image/enlargement (1).png" alt="Centered Image">
+        <div class="title">Consider setting a travel budget this month.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- App Script -->
+  <script src="app1.js"></script>
+
+</body>
+</html>
